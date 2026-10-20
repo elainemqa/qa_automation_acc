@@ -98,4 +98,36 @@ class cadastroElements {
             .and('be.visible')
             .click({ force: true })
     }
+
+    AcessarAlertsFrameWindows() {
+        cy.contains('span', 'Alerts, Frame & Windows')
+            .should('be.visible')
+            .click({ timeout: 10000 })
+    }
+
+    AcessarBrowserWindows() {
+        cy.contains('span', 'Browser Windows')
+            .should('be.visible')
+            .click({ timeout: 10000 })
+    }
+
+    acessarNewWindow() {
+        cy.get('#windowButton')
+            .should('be.visible')
+            .click({ timeout: 10000 })
+    }
+
+    ValidarPaginaAberta() {
+        it('Deve abrir a nova tela Sample Page', () => {
+
+            cy.visit('https://demoqa.com/browser-windows');
+            cy.contains('button', 'New Tab').click();
+            // Validar a nova tela
+            cy.url().should('eq', 'https://demoqa.com/sample');
+            cy.get('#sampleHeading', { timeout: 10000 })
+                .should('be.visible')
+                .and('have.text', 'This is a sample page');
+        });
+
+    }
 } export default new cadastroElements;
