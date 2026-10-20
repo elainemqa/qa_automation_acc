@@ -1,0 +1,23 @@
+{
+  "name": "qa_automation_acc",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elainemqa/qa_automation_acc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elainemqa/qa_automation_acc/issues"
+  },
+  "homepage": "https://github.com/elainemqa/qa_automation_acc#readme",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^16.2.0"
+  }
+}
