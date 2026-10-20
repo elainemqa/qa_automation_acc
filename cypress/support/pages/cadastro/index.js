@@ -128,6 +128,40 @@ class cadastroElements {
                 .should('be.visible')
                 .and('have.text', 'This is a sample page');
         });
+    }
+    AcessarElements() {
+        cy.contains('.header-text', 'Elements')
+            .should('be.visible')
+            .click();
 
     }
+    AcessarWebTables() {
+        cy.contains('span', 'Web Tables')
+            .should('be.visible')
+            .click()
+    }
+    CriarNovoRegistro() {
+        cy.get('#addNewRecordButton')
+            .should('be.visible')
+            .click({ timeout: 10000 })
+    }
+    PreencherNovoRegistro() {
+        cy.get('#firstName', { timeout: 10000 }).type('Elaine')
+        cy.get('#lastName', { timeout: 10000 }).type('lopes')
+        cy.get('#userEmail', { timeout: 10000 }).type('elaine.lopes@example.com')
+        cy.get('#age', { timeout: 10000 }).type('25')
+        cy.get('#salary', { timeout: 10000 }).type('5000')
+            .should('exist')
+            .and('be.visible')
+        cy.get('#department', { timeout: 10000 }).type('Engineering')
+        cy.get('#submit', { timeout: 10000 }).click()     
+
+    }
+
+    DeletarNovoRegistro() {
+        cy.get('#delete-record-4',{ force: true }, { timeout: 10000 })
+            .should('be.visible')
+            .click({ timeout: 10000 })
+    }
+
 } export default new cadastroElements;
